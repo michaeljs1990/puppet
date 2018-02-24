@@ -1,0 +1,14 @@
+---
+# https://docs.puppet.com/puppet/latest/environments.html
+version: 5
+defaults:
+  datadir: data
+  data_hash: yaml_data
+hierarchy:
+  - name: "Per-node data (yaml version)"
+    path: "nodes/%{::trusted.certname}.yaml"
+  - name: "Per-OS defaults"
+    path: "os/%{facts.os.family}.yaml"
+  - name: "Other YAML hierarchy levels"
+    paths:
+      - "common.yaml"
