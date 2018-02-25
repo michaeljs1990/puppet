@@ -1,6 +1,15 @@
 require 'collins_auth'
 require 'socket'
 
+# Collins facter is fairly strict as far as not letting you grab
+# random attribs from collins. Although these can be super useful
+# in speeding up development time in practice I have found that new
+# people on the team obuse the crap out of it. 
+#
+# TODO: have an override in here for strange environment or test envs
+# where facter will dropback to picking up the asset attribs from a
+# flat file. This should make building things with packer super easy
+# and make the puppet code much more portable.
 Facter.add(:collins) do
   setcode do
     collins_hash = {}
