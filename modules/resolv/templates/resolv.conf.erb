@@ -1,0 +1,5 @@
+# <%= scope.call_function('lookup', ["global::puppet_managed"]) %>
+
+<% @nameservers.each do |ns| -%>
+nameserver <%= ns %>
+<% end -%>
