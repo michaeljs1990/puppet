@@ -7,6 +7,10 @@ defaults:
 hierarchy:
   - name: "Per-node data (yaml version)"
     path: "nodes/%{::trusted.certname}.yaml"
+  - name: "Collins nodeclass"
+    path: "nodeclass/%{facts.collins.nodeclass}.yaml"
+  - name: "Collins pool"
+    path: "pool/%{facts.collins.pool}.yaml"
   - name: "Per-OS defaults"
     path: "os/%{facts.os.family}.yaml"
   - name: "Other YAML hierarchy levels"
