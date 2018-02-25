@@ -2,8 +2,4 @@
 # Globals that are accessed directly via the hiera function
 global::puppet_managed: "This file is managed by puppet"
 
-# Resolv Module
-resolv::nameservers:
-  - "8.8.8.8"
-
 profile::hiera_test::ssl: false

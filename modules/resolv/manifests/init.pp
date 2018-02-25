@@ -1,5 +1,5 @@
 class resolv (
-  Array $nameservers = $resolv::params::nameserver
+  Array $nameservers
 ) {
 
   file { '/etc/resolv.conf':
