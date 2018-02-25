@@ -18,5 +18,4 @@ hierarchy:
   - name: "Per-OS defaults"
     path: "os/%{facts.os.family}.yaml"
   - name: "Other YAML hierarchy levels"
-    paths:
-      - "common.yaml"
+    glob: "common/*.yaml"
