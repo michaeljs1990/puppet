@@ -11,17 +11,21 @@ Facter.add(:collins) do
     client = Collins::Authenticator.setup_client
     asset = (client.find hostname: hostname).first
 
+    # determine the site from the hostname
+    site = asset.hostname.split('.').at 1
     collins_hash = {
-      :hostname => asset.hostname,
-      :password => asset.password,
-      :nodeclass => asset.nodeclass,
-      :primary_role => asset.primary_role,
-      :secondary_role => asset.secondary_role,
-      :pool => asset.pool,
-      :tag => asset.tag,
-      :status => asset.status,
-      :state => asset.state.label,
-      :rack_position => asset.rack_position
+      :tag            => asset.tag,
+      :pool           => asset.pool,
+      :site           => site,
+      :state          => asset.state.label,
+      :status         => asset.status,
+      :hostname       => asset.hostname,
+      :password       => asset.password,
+      :nodeclass      => asset.nodeclass,
+      :environment    => asset.environment,
+      :primary_role   => asset.primary_role,
+      :rack_position  => asset.rack_position,
+      :secondary_role => asset.secondary_role
     }
 
     collins_hash
