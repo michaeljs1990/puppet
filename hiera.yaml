@@ -5,10 +5,10 @@ defaults:
   datadir: data
   data_hash: yaml_data
 hierarchy:
-  - name: "Per-node data (yaml version)"
-    path: "nodes/%{::trusted.certname}.yaml"
   - name: "node environment"
     path: "env/%{facts.collins.environment}.yaml"
+  - name: "Per-node data (yaml version)"
+    path: "nodes/%{::trusted.certname}.yaml"
   - name: "Collins nodeclass"
     path: "nodeclass/%{facts.collins.nodeclass}.yaml"
   - name: "Collins pool"
