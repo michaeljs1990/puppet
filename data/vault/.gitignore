@@ -1,0 +1,5 @@
+# Ignore any and all files that will be generated in this
+# folder so no one is easily able to commit secrets into the
+# repo. 
+
+*.yaml
