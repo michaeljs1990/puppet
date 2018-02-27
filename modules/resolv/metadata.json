@@ -8,7 +8,7 @@
   "project_page": "https://github.com/michaeljs1990/puppet",
   "issues_url": "https://github.com/michaeljs1990/puppet/issues",
   "dependencies": [],
-  "data_provider": "hiera",
+  "data_provider": null,
   "requirements": [
     {
       "name": "puppet",
