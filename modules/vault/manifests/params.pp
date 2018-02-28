@@ -13,7 +13,7 @@ function vault::params(
     }],
     'vault::init_system' => 'systemd',
     'vault::source_tar'  => 'https://releases.hashicorp.com/consul-template/0.19.4/consul-template_0.19.4_linux_amd64.tgz',
-    'vault::path' => '/usr/bin/consul-template'
+    'vault::path' => '/usr/bin'
   }
 
 }
