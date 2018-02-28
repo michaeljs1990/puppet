@@ -2,4 +2,10 @@
 # Globals that are accessed directly via the hiera function
 global::puppet_managed: "This file is managed by puppet"
 
+vault::templates:
+  - template_file: "%{lookup('puppet_path')}/data/vault/%{facts.collins.nodeclass}/secrets.ctmpl" 
+    destination_file: "%{lookup('puppet_path')}/data/vault/%{facts.collins.nodeclass}/secrets.yaml" 
+  - template_file: "%{lookup('puppet_path')}/data/vault/shared/secrets.ctmpl"  
+    destination_file: "%{lookup('puppet_path')}/data/vault/shared/secrets.yaml" 
+
 profile::hiera_test::ssl: false

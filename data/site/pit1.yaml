@@ -2,8 +2,3 @@
 profile::hiera_test::site: "sitetest"
 
 vault::address: "http://192.168.2.4:8200"
-vault::templates:
-  - template_file: "%{lookup('puppet_path')}/data/vault/%{facts.collins.nodeclass}/secrets.ctmpl" 
-    destination_file: "%{lookup('puppet_path')}/data/vault/%{facts.collins.nodeclass}/secrets.yaml" 
-  - template_file: "%{lookup('puppet_path')}/data/vault/shared/secrets.ctmpl"  
-    destination_file: "%{lookup('puppet_path')}/data/vault/shared/secrets.yaml" 
