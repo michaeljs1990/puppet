@@ -1,2 +1,4 @@
 ---
 profile::hiera_test::backups_enabled: true
+
+puppet_path: "/etc/puppetlabs/code/environments/production"
