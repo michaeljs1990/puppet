@@ -34,6 +34,7 @@ class vault::install (
   
   service {'consul-template':
     ensure    => 'running',
+    enable    => true,
     subscribe => File['/etc/systemd/system/consul-template.service'],
   }
   
