@@ -1,5 +1,4 @@
 class plex(
-  Boolean $ramdisk,
   String $preferences_xml_path,
   String $transcoder_temp_directory,
   String $wan_total_max_upload_rate,
@@ -22,10 +21,6 @@ class plex(
     friendly_name             => $friendly_name,
     accepted_eula             => $accepted_eula,
     log_debug                 => $log_debug
-  }
-
-  if $ramdisk {
-    warning('Coming Soon...')
   }
 
 }

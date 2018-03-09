@@ -10,7 +10,7 @@ class plex::config (
   String $wan_total_max_upload_rate,
   String $friendly_name,
   String $accepted_eula,
-  String $log_debug
+  String $log_debug,
 ) {
 
   $config = {
@@ -31,5 +31,14 @@ class plex::config (
       ]
     }
   }
+
+  # Create the transcoder temp directory and set perms
+  file { $transcoder_temp_directory:
+    ensure  => 'directory',
+    owner   => 'plex',
+    group   => 'plex'
+  }
+
+  include python::pipenv
 
 }

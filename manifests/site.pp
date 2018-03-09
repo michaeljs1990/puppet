@@ -16,4 +16,5 @@ include base
 include $site
 include $nodeclass
 
+# ensure vault and base are always applied before anything else
 Class[vault] -> Class[base] -> Class[$site] -> Class[$nodeclass]
