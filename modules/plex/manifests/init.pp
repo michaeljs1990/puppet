@@ -7,11 +7,14 @@ class plex(
   String $log_debug
 ) {
 
-  require plex::install
+  class { 'plex::install': } ->
   
   service{ 'plexmediaserver':
-    ensure => 'running',
-    enable => true
+    ensure   => 'running',
+    enable   => true,
+    start    => 'service plexmediaserver start',
+    stop     => 'service plexmediaserver stop',
+    restart  => 'service plexmediaserver restart',
   }
 
   class { 'plex::config':
