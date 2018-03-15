@@ -33,9 +33,14 @@ class vault::install (
   } ~> Class['systemd::systemctl::daemon_reload']
   
   service {'consul-template':
-    ensure    => 'running',
-    enable    => true,
-    subscribe => File['/etc/systemd/system/consul-template.service'],
+    ensure     => 'running',
+    enable     => true,
+    hasrestart => true,
+    restart    => 'service consul-template restart',
+    subscribe  => [
+      File['/etc/systemd/system/consul-template.service'],
+      File['/etc/consul-template/config.hcl']
+    ],
   }
   
 }
