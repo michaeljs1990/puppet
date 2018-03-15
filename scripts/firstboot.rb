@@ -17,6 +17,7 @@ class Firstboot
   # get reloaded unless a new puppet run starts. 
   def init_vault
     run_cmd "#{@puppet_path} apply #{@manifest_path} -e 'include vault'"
+    exit $?.exitstatus if not check_exit $?
   end
 
   # Apply puppet at the path that was provided to
@@ -26,13 +27,13 @@ class Firstboot
   def apply runs
     runs.times do
       run_cmd "#{@puppet_path} apply #{@manifest_path}"
+      break if check_exit $?
     end
   end
 
   def run_cmd cmd
     puts cmd # write to log
     system cmd
-    break if check_exit $?
   end
 
   # Given the following process ensure that the exit code
@@ -63,6 +64,7 @@ class Firstboot
   def kickstart
     init_vault
     apply 3
+    exit $?.exitstatus
   end
 
 end
