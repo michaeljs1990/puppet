@@ -26,13 +26,13 @@ class Firstboot
   def apply runs
     runs.times do
       run_cmd "#{@puppet_path} apply #{@manifest_path}"
-      break if check_exit $?
     end
   end
 
   def run_cmd cmd
     puts cmd # write to log
     system cmd
+    break if check_exit $?
   end
 
   # Given the following process ensure that the exit code
