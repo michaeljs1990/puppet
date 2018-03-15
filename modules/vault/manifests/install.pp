@@ -37,6 +37,8 @@ class vault::install (
     enable     => true,
     hasrestart => true,
     restart    => 'service consul-template restart',
+    start      => 'service consul-template start',
+    stop       => 'service consul-template stop',
     subscribe  => [
       File['/etc/systemd/system/consul-template.service'],
       File['/etc/consul-template/config.hcl']
