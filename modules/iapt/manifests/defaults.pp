@@ -2,10 +2,10 @@
 
 class iapt::defaults {
 
-  apt::source { 'xenial-updates-universe':
+  apt::source { 'bionic-universe':
     comment  => 'Default Package',
     location => 'http://us.archive.ubuntu.com/ubuntu',
-    release  => 'xenial-updates',
+    release  => 'bionic',
     repos    => 'universe',
     notify   => Exec['apt_update']
   }

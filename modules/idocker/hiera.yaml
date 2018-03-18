@@ -1,0 +1,5 @@
+---
+version: 5
+hierarchy:
+  - name: "idocker class parameter defaults"
+    data_hash: "idocker::params"

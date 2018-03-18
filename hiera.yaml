@@ -19,6 +19,8 @@ hierarchy:
     path: "pool/%{facts.collins.pool}.yaml"
   - name: "Datacenter location"
     path: "site/%{facts.collins.site}.yaml"
+  - name: "Per-Distro defaults"
+    path: "distro/%{facts.os.distro.codename}.yaml"
   - name: "Per-OS defaults"
     path: "os/%{facts.os.family}.yaml"
   - name: "Other YAML hierarchy levels"

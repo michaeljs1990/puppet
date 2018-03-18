@@ -6,10 +6,16 @@ FORGE
     puppet-staging (3.1.0)
     puppetlabs-apt (4.5.1)
       puppetlabs-stdlib (< 5.0.0, >= 4.16.0)
+    puppetlabs-docker (1.1.0)
+      puppetlabs-apt (>= 4.4.1)
+      puppetlabs-stdlib (>= 4.24.0)
+      puppetlabs-translate (< 1.1.0, >= 0.0.1)
     puppetlabs-stdlib (4.24.0)
+    puppetlabs-translate (1.0.0)
 
 DEPENDENCIES
   camptocamp-systemd (= 1.1.0)
   puppet-staging (= 3.1.0)
   puppetlabs-apt (= 4.5.1)
+  puppetlabs-docker (= 1.1.0)
 
