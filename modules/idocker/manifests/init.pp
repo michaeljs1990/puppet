@@ -9,7 +9,7 @@ class idocker(
   Class[iapt::defaults] -> Class[docker]
 
   class { 'docker':
-    docker_ce_release => $release 
+    docker_ce_release => $release
   }
 
 }

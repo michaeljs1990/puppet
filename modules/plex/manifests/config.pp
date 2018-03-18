@@ -14,7 +14,7 @@ class plex::config (
 ) {
 
   $config = {
-    'TranscoderTempDirectory' => $transcoder_temp_directory, 
+    'TranscoderTempDirectory' => $transcoder_temp_directory,
     'WanTotalMaxUploadRate'   => $wan_total_max_upload_rate,
     'FriendlyName'            => $friendly_name,
     'AcceptedEULA'            => $accepted_eula,
@@ -25,18 +25,18 @@ class plex::config (
     augeas { "Set ${key} in ${preferences_xml_path}":
       incl    => $preferences_xml_path,
       lens    => 'Xml.lns',
-      context => "/files$preferences_xml_path/Preferences",
+      context => "/files${preferences_xml_path}/Preferences",
       changes => [
-        "set #attribute/$key $value"
+        "set #attribute/${key} ${value}"
       ]
     }
   }
 
   # Create the transcoder temp directory and set perms
   file { $transcoder_temp_directory:
-    ensure  => 'directory',
-    owner   => 'plex',
-    group   => 'plex'
+    ensure => 'directory',
+    owner  => 'plex',
+    group  => 'plex'
   }
 
 }

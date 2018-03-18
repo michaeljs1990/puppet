@@ -10,9 +10,8 @@ class plex::install() {
     repos    => 'main',
     key      => 'CD665CBA0E2F88B7373F7CB997203C7B3ADCA79D',
     notify   => Exec['apt_update']
-  } ->
-
-  package { 'plexmediaserver':
+  }
+  -> package { 'plexmediaserver':
     ensure => 'installed'
   }
 

@@ -10,9 +10,8 @@ class python::pipenv {
     repos    => 'main',
     key      => '99624F96E68C4B80F1A58572539EE1903B50BB75',
     notify   => Exec['apt_update']
-  } ->
-
-  package { 'pipenv':
+  }
+  -> package { 'pipenv':
     ensure => 'installed'
   }
 

@@ -17,8 +17,8 @@ class vault (
     source_tar  => $source_tar,
     path        => $path
   }
- 
-  file { 
+
+  file {
     '/etc/consul-template':
       ensure => 'directory',
       owner  => 'root',

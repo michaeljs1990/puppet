@@ -1,3 +1,6 @@
+# Base plex class that will install and then configure some
+# base bones stuff for you.
+
 class plex(
   String $preferences_xml_path,
   String $transcoder_temp_directory,
@@ -7,14 +10,13 @@ class plex(
   String $log_debug
 ) {
 
-  class { 'plex::install': } ->
-  
-  service{ 'plexmediaserver':
-    ensure   => 'running',
-    enable   => true,
-    start    => 'service plexmediaserver start',
-    stop     => 'service plexmediaserver stop',
-    restart  => 'service plexmediaserver restart',
+  class { 'plex::install': }
+  -> service{ 'plexmediaserver':
+    ensure  => 'running',
+    enable  => true,
+    start   => 'service plexmediaserver start',
+    stop    => 'service plexmediaserver stop',
+    restart => 'service plexmediaserver restart',
   }
 
   class { 'plex::config':
