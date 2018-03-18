@@ -39,6 +39,4 @@ class plex::config (
     group   => 'plex'
   }
 
-  include python::pipenv
-
 }
