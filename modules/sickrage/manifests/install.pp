@@ -1,18 +1,22 @@
 # Pull down and configure docker version of sickrage
 
-class sickrage::install () {
+class sickrage::install (
+  String $base_dir,
+  String $config_dir,
+  String $downloads_dir,
+  String $tv_dir,
+) {
 
   require idocker
 
-  $base = '/var/lib/sickrage'
   file {
-    $base:
+    $base_dir:
       ensure => 'directory';
-    "${base}/config":
+    $config_dir:
       ensure => 'directory';
-    "${base}/downloads":
+    $downloads_dir:
       ensure => 'directory';
-    "${base}/tv":
+    $tv_dir:
       ensure => 'directory';
   }
 
@@ -20,9 +24,9 @@ class sickrage::install () {
     image         => 'linuxserver/sickrage',
     ports         => ['8080:8081'],
     volumes       => [
-      "${base}/tv:/tv",
-      "${base}/config:/config",
-      "${base}/downloads:/downloads",
+      "${tv_dir}:/tv",
+      "${config_dir}:/config",
+      "${downloads_dir}:/downloads",
     ],
     env           => [
       'PGID=0',
@@ -30,9 +34,9 @@ class sickrage::install () {
     ],
     pull_on_start => true,
     require       => [
-      File["${base}/tv"],
-      File["${base}/config"],
-      File["${base}/downloads"],
+      File[$tv_dir],
+      File[$config_dir],
+      File[$downloads_dir],
     ]
   }
 

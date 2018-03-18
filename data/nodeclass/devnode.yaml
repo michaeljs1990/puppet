@@ -1,2 +1,5 @@
 ---
 profile::hiera_test::nodeclass: "devnode"
+
+
+sickrage::tv_dir: "/mnt/media/TV"
