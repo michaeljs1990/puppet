@@ -32,11 +32,4 @@ class plex::config (
     }
   }
 
-  # Create the transcoder temp directory and set perms
-  file { $transcoder_temp_directory:
-    ensure => 'directory',
-    owner  => 'plex',
-    group  => 'plex'
-  }
-
 }

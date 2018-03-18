@@ -8,10 +8,10 @@ function sickrage::params(
 
   $base_dir = '/var/lib/sickrage'
   $base_params = {
-    'sickrage::base_dir'     => $base_dir,
+    'sickrage::base_dir'      => $base_dir,
     'sickrage::downloads_dir' => "${base_dir}/downloads",
-    'sickrage::tv_dir'       => "${base_dir}/tv",
-    'sickrage::config_dir'       => "${base_dir}/config",
+    'sickrage::tv_dir'        => "${base_dir}/tv",
+    'sickrage::config_dir'    => "${base_dir}/config",
   }
 
 }

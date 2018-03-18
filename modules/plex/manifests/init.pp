@@ -2,26 +2,26 @@
 # base bones stuff for you.
 
 class plex(
+  String $base_dir,
+  String $movies_dir,
+  String $tvshows_dir,
+  String $transcode_dir,
   String $preferences_xml_path,
-  String $transcoder_temp_directory,
   String $wan_total_max_upload_rate,
   String $friendly_name,
   String $accepted_eula,
   String $log_debug
 ) {
 
-  class { 'plex::install': }
-  -> service{ 'plexmediaserver':
-    ensure  => 'running',
-    enable  => true,
-    start   => 'service plexmediaserver start',
-    stop    => 'service plexmediaserver stop',
-    restart => 'service plexmediaserver restart',
+  class { 'plex::install':
+    base_dir      => $base_dir,
+    movies_dir    => $movies_dir,
+    tvshows_dir   => $tvshows_dir,
+    transcode_dir => $transcode_dir,
   }
-
-  class { 'plex::config':
+  -> class { 'plex::config':
     preferences_xml_path      => $preferences_xml_path,
-    transcoder_temp_directory => $transcoder_temp_directory,
+    transcoder_temp_directory => $transcode_dir,
     wan_total_max_upload_rate => $wan_total_max_upload_rate,
     friendly_name             => $friendly_name,
     accepted_eula             => $accepted_eula,

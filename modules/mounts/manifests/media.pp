@@ -19,5 +19,11 @@ class mounts::media {
       Package['nfs-common']
     ],
   }
+  -> file {
+    '/mnt/media/Movies':
+      ensure => 'directory';
+    '/mnt/media/TV':
+      ensure => 'directory';
+  }
 
 }

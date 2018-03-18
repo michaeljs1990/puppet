@@ -3,3 +3,6 @@ profile::hiera_test::nodeclass: "devnode"
 
 
 sickrage::tv_dir: "/mnt/media/TV"
+
+plex::movies_dir: "/mnt/media/Movies"
+plex::tvshows_dir: "/mnt/media/TV"

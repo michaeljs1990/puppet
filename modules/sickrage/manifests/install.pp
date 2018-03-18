@@ -9,15 +9,28 @@ class sickrage::install (
 
   require idocker
 
-  file {
-    $base_dir:
+  if sickrage::params({}, Puppet::LookupContext.new('m'))['sickrage::base_dir'] == $base_dir {
+    file { $base_dir:
       ensure => 'directory';
-    $config_dir:
+    }
+  }
+
+  if sickrage::params({}, Puppet::LookupContext.new('m'))['sickrage::config_dir'] == $config_dir {
+    file { $config_dir:
       ensure => 'directory';
-    $downloads_dir:
+    }
+  }
+
+  if sickrage::params({}, Puppet::LookupContext.new('m'))['sickrage::downloads_dir'] == $downloads_dir {
+    file { $downloads_dir:
       ensure => 'directory';
-    $tv_dir:
+    }
+  }
+
+  if sickrage::params({}, Puppet::LookupContext.new('m'))['sickrage::tv_dir'] == $tv_dir {
+    file { $tv_dir:
       ensure => 'directory';
+    }
   }
 
   docker::run { 'sickrage':

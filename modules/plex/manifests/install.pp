@@ -1,18 +1,68 @@
-# Setup the apt repo shown at the following URL
-# https://support.plex.tv/articles/235974187-enable-repository-updating-for-supported-linux-server-distributions/
+# Install plex using docker instead of using a system wide install. This has several nice
+# advantages. If you ever want to change around paths on disks the plex config is protected
+# since it will always map to /data/tvshows or /data/movies in the container. Additionally
+# it keeps the machine looking nice and clean.
 
-class plex::install() {
+class plex::install(
+  String $base_dir,
+  String $movies_dir,
+  String $tvshows_dir,
+  String $transcode_dir,
+) {
 
-  apt::source { 'plexmedia':
-    comment  => 'Plex Media',
-    location => 'http://downloads.plex.tv/repo/deb',
-    release  => 'public',
-    repos    => 'main',
-    key      => 'CD665CBA0E2F88B7373F7CB997203C7B3ADCA79D',
-    notify   => Exec['apt_update']
+  require idocker
+
+  if plex::params({}, Puppet::LookupContext.new('m'))['plex::base_dir'] == $base_dir {
+    file { $base_dir:
+      ensure => 'directory';
+    }
   }
-  -> package { 'plexmediaserver':
-    ensure => 'installed'
+
+  if plex::params({}, Puppet::LookupContext.new('m'))['plex::movies_dir'] == $movies_dir {
+    file { $movies_dir:
+      ensure => 'directory';
+    }
+  }
+
+  if plex::params({}, Puppet::LookupContext.new('m'))['plex::tvshows_dir'] == $tvshows_dir {
+    file { $tvshows_dir:
+      ensure => 'directory';
+    }
+  }
+
+  if plex::params({}, Puppet::LookupContext.new('m'))['plex::transcode_dir'] == $transcode_dir {
+    file { $transcode_dir:
+      ensure => 'directory';
+    }
+  }
+
+  docker::run { 'plex':
+    image         => 'linuxserver/plex',
+    ports         => [
+      '32400:32400',
+      '32469:32469',
+      '32400:32400/udp',
+      '32469:32469/udp',
+      '5353:5353/udp',
+      '1900:1900/udp',
+    ],
+    volumes       => [
+      "${base_dir}:/config",
+      "${movies_dir}:/data/movies",
+      "${transcode_dir}:/transcode",
+      "${tvshows_dir}:/data/tvshows",
+    ],
+    env           => [
+      'PGID=0',
+      'PUID=0',
+    ],
+    pull_on_start => true,
+    require       => [
+      File[$base_dir],
+      File[$movies_dir],
+      File[$tvshows_dir],
+      File[$transcode_dir],
+    ]
   }
 
 }
