@@ -2,7 +2,5 @@
 profile::hiera_test::nodeclass: "devnode"
 
 
+plex::data_dir: "/mnt/media"
 sickrage::tv_dir: "/mnt/media/TV"
-
-plex::movies_dir: "/mnt/media/Movies"
-plex::tvshows_dir: "/mnt/media/TV"

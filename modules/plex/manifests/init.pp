@@ -3,8 +3,7 @@
 
 class plex(
   String $base_dir,
-  String $movies_dir,
-  String $tvshows_dir,
+  String $data_dir,
   String $transcode_dir,
   String $preferences_xml_path,
   String $wan_total_max_upload_rate,
@@ -15,8 +14,7 @@ class plex(
 
   class { 'plex::install':
     base_dir      => $base_dir,
-    movies_dir    => $movies_dir,
-    tvshows_dir   => $tvshows_dir,
+    data_dir      => $data_dir,
     transcode_dir => $transcode_dir,
   }
   -> class { 'plex::config':

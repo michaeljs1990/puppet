@@ -9,8 +9,7 @@ function plex::params(
   $plexpath = '/var/lib/plexmediaserver'
   $base_params = {
     'plex::base_dir'                  => $plexpath,
-    'plex::movies_dir'                => "${plexpath}/movies",
-    'plex::tvshows_dir'               => "${plexpath}/tvshows",
+    'plex::data_dir'                  => "${plexpath}/shows",
     'plex::transcode_dir'             => "${plexpath}/transcode",
     # Plex XML Configuration
     'plex::preferences_xml_path'      => "${plexpath}/Library/Application Support/Plex Media Server/Preferences.xml",
