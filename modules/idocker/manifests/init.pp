@@ -6,7 +6,7 @@ class idocker(
   String $release
 ) {
 
-  Class[iapt::defaults] -> Class[docker]
+  Class[iapt] -> Class[docker]
 
   class { 'docker':
     docker_ce_release => $release

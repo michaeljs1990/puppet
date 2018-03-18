@@ -1,7 +1,7 @@
 # Install default apt repos that should be on every server
 
 class iapt(
-  String $release
+  String $release,
 ) {
 
   apt::source { "${release}-universe":
@@ -9,7 +9,7 @@ class iapt(
     location => 'http://us.archive.ubuntu.com/ubuntu',
     release  => $release,
     repos    => 'universe',
-    notify   => Exec['apt_update']
+    notify   => Exec['apt_update'],
   }
 
 }
