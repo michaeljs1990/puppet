@@ -6,7 +6,7 @@ function rtorrent::params(
   $base_dir = '/var/lib/rtorrent'
 
   $base_params = {
-    'rtorrent::config_dir'     => $base_dir,
+    'rtorrent::config_dir'    => $base_dir,
     'rtorrent::downloads_dir' => "${base_dir}/downloads",
   }
 
