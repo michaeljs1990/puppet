@@ -4,3 +4,4 @@ profile::hiera_test::nodeclass: "devnode"
 
 plex::data_dir: "/mnt/media"
 sickrage::tv_dir: "/mnt/media/TV"
+couchpotato::movies_dir: "/mnt/media/Movies"

@@ -1,6 +1,3 @@
-# unfortunately plex is all flat file config and the paths
-# are stupid long like a java namespace :|
-
 function sickrage::params(
   Hash                  $options,
   Puppet::LookupContext $context,
