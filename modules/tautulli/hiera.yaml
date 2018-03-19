@@ -1,0 +1,5 @@
+---
+version: 5
+hierarchy:
+  - name: "tautulli class parameter defaults"
+    data_hash: "tautulli::params"

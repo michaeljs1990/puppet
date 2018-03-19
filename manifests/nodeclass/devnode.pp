@@ -7,6 +7,7 @@ class devnode {
   include plex
   include sickrage
   include rtorrent
+  include tautulli
   include couchpotato
 
 }
