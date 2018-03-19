@@ -4,7 +4,9 @@ class utils {
 
   $shared = [
     'vim',
-    'python'
+    'python',
+    'htop',
+    'strace',
   ]
 
   package { $shared:

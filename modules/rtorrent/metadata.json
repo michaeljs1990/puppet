@@ -1,0 +1,18 @@
+{
+  "name": "rtorrent",
+  "version": "0.0.1",
+  "author": "Michael Schuett",
+  "summary": "rtorrent server.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/michaeljs1990/puppet",
+  "project_page": "https://github.com/michaeljs1990/puppet",
+  "issues_url": "https://github.com/michaeljs1990/puppet/issues",
+  "dependencies": [],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 5.4.0 < 6.0.0"
+    }
+  ]
+}
+
