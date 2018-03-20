@@ -21,9 +21,7 @@ class mounts::tmp {
     ],
   }
   -> file {
-    '/mnt/tmp/transmission':
-      ensure => directory;
-    '/mnt/tmp/transmission/downloads':
+    '/mnt/tmp/downloads':
       ensure => directory;
   }
 
