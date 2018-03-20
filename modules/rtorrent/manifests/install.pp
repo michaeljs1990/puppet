@@ -23,9 +23,9 @@ class rtorrent::install (
     image         => 'linuxserver/rutorrent',
     ports         => [
       '3000:80/tcp',
-      '5000:5000/tcp',
+      '5000:5000',
       '6881:6881/udp',
-      '51413:51413/tcp',
+      '51413:51413',
     ],
     volumes       => [
       "${config_dir}:/config",

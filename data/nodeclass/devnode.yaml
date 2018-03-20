@@ -3,5 +3,11 @@ profile::hiera_test::nodeclass: "devnode"
 
 
 plex::data_dir: "/mnt/media"
+
 sickrage::tv_dir: "/mnt/media/TV"
+sickrage::downloads_dir: "/mnt/tmp/transmission/downloads"
+
 couchpotato::movies_dir: "/mnt/media/Movies"
+couchpotato::downloads_dir: "/mnt/tmp/transmission/downloads"
+
+rtorrent::downloads_dir: "/mnt/tmp/transmission/downloads"
