@@ -35,8 +35,8 @@ class couchpotato::install(
       "${downloads_dir}:/downloads",
     ],
     env           => [
-      'PLEX_UID=0',
-      'PLEX_GID=0',
+      'PUID=10000',
+      'PGID=10000',
     ],
     pull_on_start => true,
     require       => [

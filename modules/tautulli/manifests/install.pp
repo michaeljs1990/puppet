@@ -17,8 +17,8 @@ class tautulli::install (
       "${plex_logs_dir}:/logs:ro",
     ],
     env           => [
-      'PLEX_UID=0',
-      'PLEX_GID=0',
+      'PUID=10000',
+      'PGID=10000',
     ],
     pull_on_start => true,
     require       => [

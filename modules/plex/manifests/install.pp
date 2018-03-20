@@ -59,8 +59,8 @@ class plex::install(
       "${transcode_dir}:/transcode",
     ],
     env           => [
-      'PLEX_UID=0',
-      'PLEX_GID=0',
+      'PLEX_UID=10000',
+      'PLEX_GID=10000',
       "HOSTNAME=${::fqdn}",
       "ADVERTISE_IP=http://${::ipaddress}:32400",
     ],

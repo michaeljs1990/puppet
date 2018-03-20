@@ -23,9 +23,9 @@ class rtorrent::install (
     image         => 'linuxserver/rutorrent',
     ports         => [
       '3000:80/tcp',
-      '5000:5000',
+      '5000:5000/tcp',
       '6881:6881/udp',
-      '51413:51413',
+      '51413:51413/tcp',
     ],
     volumes       => [
       "${config_dir}:/config",
@@ -33,6 +33,8 @@ class rtorrent::install (
     ],
     env           => [
       'TERM=xterm',  # Hack or rtorrent fails to start without this set
+      'PGID=10000',
+      'PUID=10000',
     ],
     pull_on_start => true,
     require       => [

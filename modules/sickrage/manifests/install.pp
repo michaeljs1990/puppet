@@ -42,8 +42,8 @@ class sickrage::install (
       "${downloads_dir}:/downloads",
     ],
     env           => [
-      'PGID=0',
-      'PUID=0',
+      'PGID=10000',
+      'PUID=10000',
     ],
     pull_on_start => true,
     require       => [
