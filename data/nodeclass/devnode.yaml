@@ -1,6 +1,7 @@
 ---
 profile::hiera_test::nodeclass: "devnode"
 
+inginx::htpasswd::file: "/etc/nginx/.htpasswd"
 
 plex::data_dir: "/mnt/media"
 
