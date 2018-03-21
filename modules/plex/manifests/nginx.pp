@@ -11,12 +11,12 @@ class plex::nginx() {
       'localhost:32400',
     ],
   }
-  
-  nginx::resource::server { 
+
+  nginx::resource::server {
     'plex.terame.com':
-      proxy => "http://$upstream";
+      proxy => "http://${upstream}";
     'plex.terame.m':
-      proxy => "http://$upstream";
-  } 
+      proxy => "http://${upstream}";
+  }
 
 }

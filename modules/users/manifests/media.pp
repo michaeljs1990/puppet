@@ -2,7 +2,7 @@
 # it serves no functional purpose.
 
 class users::media {
-  
+
   group { 'media':
     ensure => 'present',
     gid    => '10000',

@@ -11,12 +11,12 @@ class sickrage::nginx() {
       'localhost:8080',
     ],
   }
-  
-  nginx::resource::server { 
+
+  nginx::resource::server {
     'sickrage.terame.com':
-      proxy => "http://$upstream";
+      proxy => "http://${upstream}";
     'sickrage.terame.m':
-      proxy => "http://$upstream";
-  } 
+      proxy => "http://${upstream}";
+  }
 
 }

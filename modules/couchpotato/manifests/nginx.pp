@@ -11,12 +11,12 @@ class couchpotato::nginx() {
       'localhost:5050',
     ],
   }
-  
-  nginx::resource::server { 
+
+  nginx::resource::server {
     'couchpotato.terame.com':
-      proxy => "http://$upstream";
+      proxy => "http://${upstream}";
     'couchpotato.terame.m':
-      proxy => "http://$upstream";
-  } 
+      proxy => "http://${upstream}";
+  }
 
 }

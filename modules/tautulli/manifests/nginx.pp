@@ -11,12 +11,12 @@ class tautulli::nginx() {
       'localhost:8181',
     ],
   }
-  
-  nginx::resource::server { 
+
+  nginx::resource::server {
     'tautulli.terame.com':
-      proxy => "http://$upstream";
+      proxy => "http://${upstream}";
     'tautulli.terame.m':
-      proxy => "http://$upstream";
-  } 
+      proxy => "http://${upstream}";
+  }
 
 }

@@ -4,7 +4,7 @@ class inginx::htpasswd (
   String $file,
   String $password_hash,
 ) {
-  
+
   $user = 'media'
 
   file { $file:
