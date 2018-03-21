@@ -7,6 +7,8 @@ class sickrage (
   String $tv_dir,
 ) {
 
+  include sickrage::nginx
+
   class { 'sickrage::install':
     base_dir      => $base_dir,
     config_dir    => $config_dir,

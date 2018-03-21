@@ -4,6 +4,8 @@ class couchpotato (
   String $downloads_dir,
 ) {
 
+  include couchpotato::nginx
+
   class { 'couchpotato::install':
     base_dir      => $base_dir,
     movies_dir    => $movies_dir,

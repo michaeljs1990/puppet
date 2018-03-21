@@ -12,6 +12,8 @@ class plex(
   String $log_debug
 ) {
 
+  include plex::nginx
+
   class { 'plex::install':
     base_dir      => $base_dir,
     data_dir      => $data_dir,

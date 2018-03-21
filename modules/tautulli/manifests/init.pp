@@ -9,6 +9,8 @@ class tautulli (
 
   require plex
 
+  include tautulli::nginx
+
   class { 'tautulli::install':
     config_dir    => $config_dir,
     plex_logs_dir => $plex_logs_dir,
