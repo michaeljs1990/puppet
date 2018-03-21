@@ -3,9 +3,14 @@ FORGE
   specs:
     camptocamp-systemd (1.1.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
+    puppet-nginx (0.11.0)
+      puppetlabs-concat (< 5.0.0, >= 3.0.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
     puppet-staging (3.1.0)
     puppetlabs-apt (4.5.1)
       puppetlabs-stdlib (< 5.0.0, >= 4.16.0)
+    puppetlabs-concat (4.2.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
     puppetlabs-docker (1.1.0)
       puppetlabs-apt (>= 4.4.1)
       puppetlabs-stdlib (>= 4.24.0)
@@ -15,6 +20,7 @@ FORGE
 
 DEPENDENCIES
   camptocamp-systemd (= 1.1.0)
+  puppet-nginx (= 0.11.0)
   puppet-staging (= 3.1.0)
   puppetlabs-apt (= 4.5.1)
   puppetlabs-docker (= 1.1.0)
