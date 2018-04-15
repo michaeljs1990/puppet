@@ -9,11 +9,12 @@ forge "https://forgeapi.puppetlabs.com"
 # modulefile
 
 # A module from the Puppet Forge
+mod 'camptocamp-systemd', '1.1.0'
+mod 'evenup-backup', '0.8.0'
 mod 'puppet-nginx', '0.11.0'
 mod 'puppet-staging', '3.1.0'
 mod 'puppetlabs-apt', '4.5.1'
 mod 'puppetlabs-docker', '1.1.0'
-mod 'camptocamp-systemd', '1.1.0'
 
 # A module from git
 # mod 'puppetlabs-ntp',
