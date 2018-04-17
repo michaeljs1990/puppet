@@ -56,8 +56,11 @@ Facter.add(:collins) do
 
     begin
       # Write the above collins info out to a flat file for future use.
+      # Make sure that this is not readable by everyone on the system as
+      # it contains the root user password.
       File.open(static_file, "w") do |f|
         f.write(JSON.pretty_generate(collins_hash))
+	f.chmod(0600)
       end
     rescue => ex
       Facter.log_exception ex
