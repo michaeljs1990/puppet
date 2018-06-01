@@ -11,7 +11,7 @@ class mounts::backup {
   mount { '/mnt/backup':
     ensure  => 'mounted',
     fstype  => 'nfs',
-    device  => '192.168.2.3:/shares/backup',
+    device  => '10.0.0.12:/shares/backup',
     options => 'auto,noatime,bg,nfsvers=4,intr,tcp',
     atboot  => true,
     require => [

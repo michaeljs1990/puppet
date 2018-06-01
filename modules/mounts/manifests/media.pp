@@ -11,7 +11,7 @@ class mounts::media {
   mount { '/mnt/media':
     ensure  => 'mounted',
     fstype  => 'nfs',
-    device  => '192.168.2.3:/shares/media',
+    device  => '10.0.0.12:/shares/media',
     options => 'auto,noatime,bg,nfsvers=4,intr,tcp',
     atboot  => true,
     require => [

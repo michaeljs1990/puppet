@@ -12,7 +12,7 @@ class mounts::tmp {
   mount { '/mnt/tmp':
     ensure  => 'mounted',
     fstype  => 'nfs',
-    device  => '192.168.2.3:/shares/tmp',
+    device  => '10.0.0.12:/shares/tmp',
     options => 'auto,noatime,bg,nfsvers=4,intr,tcp',
     atboot  => true,
     require => [
